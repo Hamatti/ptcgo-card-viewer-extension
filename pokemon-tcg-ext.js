@@ -1,27 +1,28 @@
 const PTCGO_CARD_PATTERN = new RegExp(/([A-Z-]{3,6} \d{1,3})/g)
+const HIGHLIGHT_STYLES = `text-decoration: underline dashed darkred 2px;`
 
 browser.runtime.onMessage.addListener(message => {
     if (message.action === 'scanAndHighlight') {
-        scanAndHighlight()
+        scanAndHighlight();
     }
 })
 
 function highlightCard(event) {
-    const element = event.target
+    const element = event.target;
     const ptcgoCode = element.dataset?.ptcgo;
     const imageSrc = element.dataset?.imageSrc;
     if (ptcgoCode && !imageSrc) {
         browser.runtime.sendMessage({ action: 'download', ptcgoCode }).then(response => {
             if (response.status === 0) {
-                element.dataset.imageSrc = response.image
-                showImage(element)
+                element.dataset.imageSrc = response.image;
+                showImage(element);
             } else {
-                element.dataset.imageSrc = "n/a"
+                element.dataset.imageSrc = "n/a";
             }
         });
     }
     if (imageSrc) {
-        showImage(element)
+        showImage(element);
     }
 }
 
@@ -35,7 +36,7 @@ function showImage(element) {
     popUp.src = imageSrc;
     popUp.style = 'width: 200px; position: absolute; z-index: 999';
 
-    element.appendChild(popUp)
+    element.appendChild(popUp);
 }
 
 function hideCard(event) {
@@ -46,14 +47,14 @@ function hideCard(event) {
      * This timeout runs the hideCard again after a short while to prevent this issue
      */
     if(!image) {
-        setTimeout(() => hideCard(event), 50)
+        setTimeout(() => hideCard(event), 50);
     }
-    element.removeChild(image)
+    element.removeChild(image);
 }
 
 function scanAndHighlight() {
     const location = window.location.href;
-    let content = ''
+    let content = '';
 
     /* A few special cases for sites that often have decklists shared */
     if(location.includes('youtube') || location.includes('youtu.be')) {
@@ -68,7 +69,8 @@ function scanAndHighlight() {
         if (node.textContent.match(PTCGO_CARD_PATTERN)) {
             node.innerHTML = node.innerHTML.replaceAll(
                 PTCGO_CARD_PATTERN,
-                '<span class="pokemon-tcg-card" style="text-decoration: underline dashed red 3px;" data-ptcgo="$&">$&</span>')
+                `<span class="pokemon-tcg-card" style="${HIGHLIGHT_STYLES}" data-ptcgo="$&">$&</span>`
+            );
         }
     })
 
