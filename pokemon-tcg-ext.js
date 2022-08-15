@@ -19,7 +19,7 @@ function highlightCard(event) {
     if (ptcgoCode && !imageSrc) {
         browser.runtime.sendMessage({ action: 'download', ptcgoCode }).then(response => {
             if (response.status === 0) {
-                element.dataset.imageSrc = response.image;
+                element.dataset.imageSrc = DOMPurify.sanitize(response.image);
                 showImage(element);
             } else {
                 element.dataset.imageSrc = "n/a";
@@ -38,7 +38,7 @@ function showImage(element) {
     }
 
     const popUp = document.createElement('img');
-    popUp.src = imageSrc;
+    popUp.src = DOMPurify.sanitize(imageSrc);
     popUp.style = 'width: 200px; position: absolute; z-index: 999';
 
     element.appendChild(popUp);
