@@ -31,6 +31,7 @@ function getSubsettedNumber(ptcgoCode, number) {
     }
 }
 
+/* Only export if we're running tests with Node */
 if(typeof module !== 'undefined' && module.exports) {
     module.exports = {
         getSubsettedNumber

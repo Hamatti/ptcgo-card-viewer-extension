@@ -2,6 +2,12 @@
 
 Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
+**Before**
+![A Pokemon TCG decklist in Youtube video description](docs/before.png)
+
+**After**
+![A Pokemon TCG decklist in Youtube video description with PTCGO codes underlined and Crobat V card visible](docs/after.png)
+
 ## Develop
 
 When developing, you can test it with

@@ -74,11 +74,16 @@ function scanAndHighlight() {
         if (node.textContent.match(PTCGO_CARD_PATTERN)) {
             node.innerHTML = DOMPurify.sanitize(node.innerHTML.replaceAll(
                 PTCGO_CARD_PATTERN,
-                `<span class="pokemon-tcg-card" style="${HIGHLIGHT_STYLES}" data-ptcgo="$&">$&</span>`
+                `<span class="pokemon-tcg-card" tabindex="0" style="${HIGHLIGHT_STYLES}" data-ptcgo="$&">$&</span>`
             ));
         }
     })
 
+    /* For hovering with mouse */
     document.querySelectorAll('.pokemon-tcg-card').forEach(node => node.addEventListener('mouseenter', highlightCard));
     document.querySelectorAll('.pokemon-tcg-card').forEach(node => node.addEventListener('mouseleave', hideCard));
+    
+    /* For tabbing through with keyboard */
+    document.querySelectorAll('.pokemon-tcg-card').forEach(node => node.addEventListener('focusin', highlightCard));
+    document.querySelectorAll('.pokemon-tcg-card').forEach(node => node.addEventListener('focusout', hideCard));
 }
