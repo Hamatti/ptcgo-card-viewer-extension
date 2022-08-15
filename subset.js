@@ -49,13 +49,6 @@ function getSubsettedNumber(ptcgoCode, number) {
     }
 }
 
-// // /** CLI TESTING */
-// const assert = require('node:assert/strict');
-// assert.equal(getSubsettedNumber('LTR', 20), '20');
-// assert.equal(getSubsettedNumber('LTR', 130), 'RC15');
-// assert.equal(getSubsettedNumber('PR-SW', 20), 'SWSH020');
-// assert.equal(getSubsettedNumber('ASR', 220), 'TG04');
-
 module.exports = {
     getSubsettedNumber
 }
