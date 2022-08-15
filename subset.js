@@ -31,6 +31,8 @@ function getSubsettedNumber(ptcgoCode, number) {
     }
 }
 
-module.exports = {
-    getSubsettedNumber
+if(typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        getSubsettedNumber
+    }
 }

@@ -1,9 +1,14 @@
 const PTCGO_CARD_PATTERN = new RegExp(/([A-Z-]{3,6} \d{1,3})/g)
 const HIGHLIGHT_STYLES = `text-decoration: underline dashed darkred 2px;`
 
+let ALREADY_RUN = false;
+
 browser.runtime.onMessage.addListener(message => {
     if (message.action === 'scanAndHighlight') {
-        scanAndHighlight();
+        if(!ALREADY_RUN) {
+            scanAndHighlight();
+            ALREADY_RUN = true;
+        }
     }
 })
 
@@ -67,10 +72,10 @@ function scanAndHighlight() {
   
     Object.values(content).forEach(node => {
         if (node.textContent.match(PTCGO_CARD_PATTERN)) {
-            node.innerHTML = node.innerHTML.replaceAll(
+            node.innerHTML = DOMPurify.sanitize(node.innerHTML.replaceAll(
                 PTCGO_CARD_PATTERN,
                 `<span class="pokemon-tcg-card" style="${HIGHLIGHT_STYLES}" data-ptcgo="$&">$&</span>`
-            );
+            ));
         }
     })
 

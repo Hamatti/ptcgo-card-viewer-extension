@@ -12,6 +12,7 @@
                 "*://*/*"
             ],
             "js": [
+                "purify.min.js",
                 "pokemon-tcg-ext.js"
             ]
         }
