@@ -4,6 +4,16 @@ Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
 ## Develop
 
+When developing, you can test it with
+
+```
+npx web-ext run
+```
+
+which opens up a Firefox instance with this extension loaded.
+
+To debug it while running, open [about:debugging](about:debugging) into a new window, choose "This Firefox" from menu and "Inspect" under this extension.
+
 ### Running tests
 
 Tests that live in `tests/` are for development only and won't be packaged into the extension.
