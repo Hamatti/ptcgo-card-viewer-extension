@@ -2,6 +2,12 @@
 
 Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
+## Install & Usage
+
+Install it from the [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/pokemon-tcg-card-viewer/).
+
+To use it on a website, click the extension icon.
+
 ## How it works?
 
 By clicking the extension icon, the script searches for Pokemon TCG Online codes (for example: ASR 65) and adds a `<span>` wrapper around them. Once the user either hovers over the `span` or focuses on it with keyboard, an API call is made to [pokemontcg.io API](https://pokemontcg.io/) to get the image URL for that card. That is then injected into the DOM.
