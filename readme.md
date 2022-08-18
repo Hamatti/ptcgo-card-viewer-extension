@@ -2,9 +2,9 @@
 
 Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
-## Status
+## How it works?
 
-Currently still in pre-publish development so can't be installed yet.
+By clicking the extension icon, the script searches for Pokemon TCG Online codes (for example: ASR 65) and adds a `<span>` wrapper around them. Once the user either hovers over the `span` or focuses on it with keyboard, an API call is made to [pokemontcg.io API](https://pokemontcg.io/) to get the image URL for that card. That is then injected into the DOM.
 
 ## Develop
 
