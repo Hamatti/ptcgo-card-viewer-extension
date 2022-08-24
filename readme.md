@@ -44,4 +44,6 @@ make build
 
 to build an extension. This command excludes `tests/`, `makefile` and `dist/` from the build.
 
+This creates an `.xpi` file in `dist/` folder.
+
 Optionally, you can create a zip file manually. Exclude the files above to avoid sending extra files and artefacts that doesn't need to be inside the extension.
