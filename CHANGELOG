@@ -1,0 +1,9 @@
+# Changelog
+
+## 1.0.1
+
+- Use `hostname` instead of `href` for location detection
+
+## 1.0.0
+
+First version published in [AMO](https://addons.mozilla.org)
