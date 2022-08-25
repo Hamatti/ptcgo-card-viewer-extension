@@ -58,7 +58,7 @@ function hideCard(event) {
 }
 
 function scanAndHighlight() {
-    const location = window.location.href;
+    const location = window.location.hostname;
     let content = '';
 
     /* A few special cases for sites that often have decklists shared */
