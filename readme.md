@@ -4,6 +4,8 @@ Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
 ## Install & Usage
 
+<a href="https://addons.mozilla.org/en-US/firefox/addon/pokemon-tcg-card-viewer/"><img src="docs/get-the-addon-fx-apr-2020.svg" alt="Get the add-on from AMO" width="300" /></a>
+
 Install it from the [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/pokemon-tcg-card-viewer/).
 
 To use it on a website, click the extension icon.
