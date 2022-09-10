@@ -1,29 +1,21 @@
 {
-    "manifest_version": 2,
-    "name": "pokemon-tcg-ext",
-    "version": "1.0.1",
-    "description": "Hover over a Pokemon TCG card ID to see the card image – anywhere in the web",
-    "icons": {
-        "48": "icons/48.png"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "purify.min.js",
-                "pokemon-tcg-ext.js"
-            ]
-        }
-    ],
-    "background": {
-        "scripts": [
-            "subset.js",
-            "background.js"
-        ]
-    },
-    "browser_action": {
-        "default_title": "Highlight Pokemon cards"
+  "manifest_version": 2,
+  "name": "pokemon-tcg-ext",
+  "version": "1.1.0",
+  "description": "Hover over a Pokemon TCG card ID to see the card image – anywhere in the web",
+  "icons": {
+    "48": "icons/48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["purify.min.js", "pokemon-tcg-ext.js"]
     }
+  ],
+  "background": {
+    "scripts": ["subset.js", "background.js"]
+  },
+  "browser_action": {
+    "default_title": "Highlight Pokemon cards"
+  }
 }
