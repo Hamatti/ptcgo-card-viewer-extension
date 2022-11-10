@@ -69,6 +69,20 @@ describe('Subsets', function () {
       });
     })
 
+    describe('Lost Origins (LOR)', () => {
+      it('should return number as-is if not part of Trainer gallery', () => {
+        assert.equal(getSubsettedNumber('LOR', 70), '70');
+      });
+
+      it('should return a prefix and adjusted number for BRS TG', () => {
+        assert.equal(getSubsettedNumber('LOR', 231), 'TG14');
+      });
+
+      it('should left pad to two digits with single-digit Trainer Gallery', () => {
+        assert.equal(getSubsettedNumber('LOR', 221), 'TG04');
+      });
+    })
+
     describe('Sword and Shield Promos (PR-SW)', () => {
       it('should prefix correctly with the promo', () => {
         assert.equal(getSubsettedNumber('PR-SW', 70), 'SWSH070');
