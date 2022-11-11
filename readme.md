@@ -1,4 +1,6 @@
-# pokemon-tcg-ext
+# Pokemon TCG Card Viewer Extension
+
+[![Mozilla Add-on v.1.2.0](https://img.shields.io/amo/v/pokemon-tcg-card-viewer?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/pokemon-tcg-card-viewer/)
 
 Hover over a Pokemon TCG card ID to see the card image – anywhere in the web
 
