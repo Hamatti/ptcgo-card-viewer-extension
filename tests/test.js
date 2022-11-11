@@ -110,8 +110,8 @@ describe('Subsets', function () {
       it('should prefix correctly with the promo', () => {
         assert.equal(getSubsettedNumber('PR-SM', 70), 'SM70');
       });
-      it('should prefix correctly with the promo, using no left pad', () => {
-        assert.equal(getSubsettedNumber('PR-SM', 3), 'SM3');
+      it('should prefix correctly with the promo, using two digit left pad', () => {
+        assert.equal(getSubsettedNumber('PR-SM', 3), 'SM03');
       });
     })
 

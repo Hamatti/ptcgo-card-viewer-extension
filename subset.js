@@ -14,7 +14,7 @@ const subsets = {
   LOR: { total: 217, prefix: "TG", leftPad: 2 },
   SIT: { total: 215, prefix: "TG", leftPad: 2 },
   "PR-SW": { total: 0, prefix: "SWSH", leftPad: 3 },
-  "PR-SM": { total: 0, prefix: "SM", leftPad: 0 },
+  "PR-SM": { total: 0, prefix: "SM", leftPad: 2 },
   "PR-XY": { total: 0, prefix: "XY", leftPad: 2 },
   "PR-BLW": { total: 0, prefix: "BW", leftPad: 2 },
 };
