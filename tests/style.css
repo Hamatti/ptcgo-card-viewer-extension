@@ -1,0 +1,39 @@
+main {
+    max-width: 800px;
+    margin: 2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    display: inline;
+}
+
+details {
+    margin: 1em;
+}
+
+table {
+    width: 80%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+th {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+
+td {
+    width: 50%;
+    text-align: center;
+    padding: 1em 0;
+}
+
+td:nth-child(2) {
+    font-size: 2em;
+}
