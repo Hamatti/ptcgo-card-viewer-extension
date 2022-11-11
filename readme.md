@@ -36,6 +36,18 @@ make test
 
 This will install [mocha](https://mochajs.org/) as a development dependency into `tests/` and run the tests.
 
+#### Visual & functional tests
+
+In addition to automated tests above, there's a system for manual verification of base and special case cards.
+
+```
+make test-visual
+```
+
+This command will start a local http server in the `tests/` folder to localhost:9000 and open a new Firefox instance on that URL with the extension loaded.
+
+You should then run the extension by clicking the icon and manually verify that all card codes were identified and the hover shows the correct card.
+
 ### Building the extension
 
 If you have [GNU Make](https://www.gnu.org/software/make/) and zip installed, you can run
