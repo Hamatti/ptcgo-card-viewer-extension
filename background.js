@@ -8,6 +8,8 @@ browser.runtime.onMessage.addListener(async (message) => {
     let fullUrl;
     if (set === "SVI") {
       fullUrl = `${API_URL}cards?q=set.id:sv1%20number:${number}`;
+    } else if (set === "PAL") {
+      fullUrl = `${API_URL}cards?q=set.id:sv2%20number:${number}`;
     } else {
       fullUrl = `${API_URL}cards?q=set.ptcgoCode:${set}%20number:${number}`;
     }
