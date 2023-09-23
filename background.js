@@ -12,6 +12,8 @@ browser.runtime.onMessage.addListener(async (message) => {
       fullUrl = `${API_URL}cards?q=set.id:sv2%20number:${number}`;
     } else if (set === "OBF") {
       fullUrl = `${API_URL}cards?q=set.id:sv3%20number:${number}`;
+    } else if (set === "MEW") {
+      fullUrl = `${API_URL}cards?q=set.id:sv3pt5%20number:${number}`;
     } else {
       fullUrl = `${API_URL}cards?q=set.ptcgoCode:${set}%20number:${number}`;
     }
