@@ -1,19 +1,22 @@
 const API_URL = "https://api.pokemontcg.io/v2/";
 
+const idExceptions = {
+  SVI: "sv1",
+  PAL: "sv2",
+  OBF: "sv3",
+  MEW: "sv3pt5",
+  CEL: "cel25",
+  PAR: "sv4",
+};
+
 browser.runtime.onMessage.addListener(async (message) => {
   if (message.action === "download") {
     const ptcgoCode = message.ptcgoCode;
     let [set, number] = ptcgoCode.split(" ");
     number = getSubsettedNumber(set, number);
     let fullUrl;
-    if (set === "SVI") {
-      fullUrl = `${API_URL}cards?q=set.id:sv1%20number:${number}`;
-    } else if (set === "PAL") {
-      fullUrl = `${API_URL}cards?q=set.id:sv2%20number:${number}`;
-    } else if (set === "OBF") {
-      fullUrl = `${API_URL}cards?q=set.id:sv3%20number:${number}`;
-    } else if (set === "MEW") {
-      fullUrl = `${API_URL}cards?q=set.id:sv3pt5%20number:${number}`;
+    if (set in idExceptions) {
+      fullUrl = `${API_URL}cards?q=set.id:${idExceptions[set]}%20number:${number}`;
     } else {
       fullUrl = `${API_URL}cards?q=set.ptcgoCode:${set}%20number:${number}`;
     }
