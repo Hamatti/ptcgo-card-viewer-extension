@@ -7,6 +7,7 @@ const idExceptions = {
   MEW: "sv3pt5",
   CEL: "cel25",
   PAR: "sv4",
+  PAF: "sv4pt5",
 };
 
 browser.runtime.onMessage.addListener(async (message) => {
